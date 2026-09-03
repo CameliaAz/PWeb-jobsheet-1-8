@@ -5,7 +5,7 @@ Isi tahap ini
 index.html — Beranda dengan ringkasan statistik (dummy).
 ![Teks Alternatif](img/beranda.jpeg)
 buku/list.html — tabel daftar buku statis (5 baris dummy).
-![Teks Alternatif](img/tabel%20buku.png)
+![Teks Alternatif](img/daftarbuku.png)
 buku/tambah.html — form tambah buku (belum diproses).
 ![Teks Alternatif](img/mandiri-tabelbuku.jpeg)
 anggota/list.html — tabel daftar anggota statis (tugas mandiri).
