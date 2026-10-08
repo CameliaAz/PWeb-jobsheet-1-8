@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <title>SIMPUS | TAMBAH BUKU</title>
-</head>
-<body>
-    <header>
-        <h1>SIMPUS MINI</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Beranda</a></li>
-                <li><a href="list.html">Buku</a></li>
-                <li><a href="tambah.html">Tambah Buku</a></li>
-                <li><a href="../anggota/list.html">Daftar Anggota</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
+<?php
+$page_title = "SIMPUS | TAMBAH BUKU";
+include __DIR__ . '/../includes/header.php';
+$flash = $_SESSION['flash'] ?? null;
+unset($_SESSION['flash']);
+?>
         <section>
             <h2>Tambah Buku</h2>
-            <form>
+            <!-- Menampilkan Flash Message jika ada error dari proses_tambah.php -->
+    <?php if (isset($_SESSION['flash'])): ?>
+        <div class="flash flash-<?php echo $_SESSION['flash']['type']; ?>">
+            <?php echo $_SESSION['flash']['pesan']; ?>
+        </div>
+        <?php unset($_SESSION['flash']); ?>
+    <?php endif; ?>
+
+            <form id="form-tambah" method="post" action="proses-tambah.php" novalidate>
     <p>
         <label for="judul">Judul</label><br>
         <input type="text" id="judul" name="judul" required>
@@ -33,7 +25,7 @@
     </p>
     <p>
         <label for="tahun">Tahun Terbit</label><br>
-        <input type="number" id="tahun" name="tahun" min="1900" max="2026" required>
+        <input type="number" id="tahun" name="tahun_terbit" min="1900" max="2026" required>
     </p>
     <p>
         <label for="isbn">ISBN</label><br>
@@ -41,7 +33,7 @@
     </p>
     <p>
         <label for="stok">Stok</label><br>
-        <input type="number" id="stok" name="stok" min="0" required>
+        <input type="number" id="stok" name="stok" required>
     </p>
     <p>
         <label for="kategori">Kategori</label><br>
@@ -56,6 +48,6 @@
     </p>
     </form>
         </section>
-    </main>
+    <?php include __DIR__ . '/../includes/footer.php'; ?> 
 </body>
 </html>
