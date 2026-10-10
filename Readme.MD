@@ -1,9 +1,11 @@
 * **Nama:** [Camelia Azzahra]
 * **NIM:** [264107027014]
 * **Kelas:** [Teknik Informatika - 2G]
-                                    **LAPORAN PRAKTIKUM PEMOGRAMAN WEB SEMESTER 3(2026)**
+====================================================================================================================================================================================================================================================================================
 
-**Jobsheet 1-2 — HTML5 Semantic Skeleton**
+# LAPORAN PRAKTIKUM PEMOGRAMAN WEB SEMESTER 3(2026) 
+
+# Jobsheet 1-2 — HTML5 Semantic Skeleton
 Sub-CPMK: Menyusun struktur halaman web dengan HTML5 semantic.
 
 Isi tahap ini
