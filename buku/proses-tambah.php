@@ -4,7 +4,7 @@ session_start();
 // 1. Menerima data dari form POST dengan null coalescing operator (??) dan trim
 $judul     = trim($_POST['judul'] ?? '');
 $pengarang = trim($_POST['pengarang'] ?? '');
-$tahun     = $_POST['tahun'] ?? '';
+$tahun     = $_POST['tahun_terbit'] ?? '';
 $isbn      = trim($_POST['isbn'] ?? '');
 $stok      = $_POST['stok'] ?? '';
 $kategori  = trim($_POST['kategori'] ?? '');

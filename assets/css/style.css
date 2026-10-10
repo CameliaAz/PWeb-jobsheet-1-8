@@ -293,20 +293,42 @@ td button {
   font-size: 0.85rem;
 }
 
-td button:first-of-type {
+td button:first-of-type,
+td a.btn-edit {
   background-color: #f0ad4e;
   color: #fff;
 }
 
-td button:nth-of-type(2) {
-  background-color: #0c6885;
+td a.btn-edit {
+  display: inline-block;
+    padding: 0.35rem 0.7rem;
+    margin-right: 0.35rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+td form.form-hapus {
+    display: inline;
+}
+
+td button:nth-of-type(2),
+td form.form-hapus button {
+  background-color: #ad1313;
   color: #fff;
 }
 
-td button:last-of-type {
+td form.form-hapus button:hover,
+td form.form-hapus button:focus,
+td form.form-hapus button:active {
+  background-color: #900f0f; 
+  color: #fff;
+  outline: none;
+}
+
+/* td button:last-of-type {
   background-color: #d9534f;
   color: #fff;
-}
+} */
 
 /* ===== Form ===== */
 form p {
@@ -399,6 +421,21 @@ footer {
   box-shadow: 0 0 0 3px rgba(29, 91, 138, 0.15);
 }
 
+.search-box form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-end;
+}
+
+.search-box button {
+    padding: 0.55rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #1d5b8a;
+    color: #fff;
+    cursor: pointer;
+}
+
 /* ===== Flash Message ===== */
 .flash {
     padding: 0.75rem 1rem;
@@ -417,6 +454,25 @@ footer {
     color: #721c24;
 }
 
+/* ===== Pagination ===== */
+.pagination {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.pagination a {
+    padding: 0.4rem 0.75rem;
+    border: 1px solid #cdd4da;
+    border-radius: 4px;
+    color: #1d5b8a;
+}
+
+.pagination a.active {
+    background-color: #044e86;
+    color: #fff;
+    border-color: #044e86;
+}
 
 /* ===== Responsive Breakpoints ===== */
 

@@ -357,3 +357,56 @@ Validasi Server Adalah Pertahanan Utama: Validasi JavaScript bermanfaat untuk ke
 
 Session Sebagai Media Transit: $_SESSION sangat efektif digunakan sebagai penampung data sementara dan media
 
+
+# LAPORAN PRAKTIKUM - Jobsheet 8
+**SIMPUS-Mini: Koneksi Database PostgreSQL**
+
+---
+
+## 1. Pendahuluan & Tujuan Praktikum
+
+Pada praktikum sebelumnya (Jobsheet 7), penyimpanan data aplikasi masih bersifat sementara menggunakan `$_SESSION`, sehingga data akan hilang begitu sesi browser ditutup atau komputer dimatikan. Jobsheet 8 bertujuan untuk mengatasi keterbatasan tersebut dengan mengintegrasikan database relasional **PostgreSQL** sebagai media penyimpanan data permanen (*persistent storage*).
+
+### Tujuan Pembelajaran:
+* Memahami konsep dasar database relasional dan penggunaan sintaks SQL (*Data Definition Language* & *Data Manipulation Language*).
+* Menghubungkan aplikasi PHP ke database PostgreSQL menggunakan **PDO (PHP Data Objects)**.
+* Menerapkan **Prepared Statements** pada operasi `INSERT` untuk mencegah celah keamanan *SQL Injection*.
+* Mengubah alur pembacaan data (`SELECT`) dan perhitungan statistik (`SELECT COUNT(*)`) agar bersumber dari database sungguhan.
+
+---
+
+## 2. Struktur Proyek
+
+```text
+jobsheet-08/
+├── index.php                      # Kartu statistik dari SELECT COUNT(*)
+├── includes/
+│   ├── header.php, footer.php     # Template antarmuka
+│   └── koneksi.php                 # BARU — Koneksi PDO ke PostgreSQL
+├── sql/
+│   └── 01_buku_anggota.sql         # BARU — Skema tabel buku & anggota
+├── buku/
+│   ├── list.php                    # SELECT * FROM buku (bukan $_SESSION)
+│   ├── tambah.php                  # Form tambah buku
+│   └── proses_tambah.php           # INSERT via prepared statement
+├── anggota/
+│   ├── list.php                    # SELECT * FROM anggota
+│   ├── tambah.php                  # Form tambah anggota
+│   └── proses_tambah.php           # INSERT via prepared statement
+├── docs/wireframe.md               # Dokumentasi antarmuka
+└── README.md
+```
+
+## Hasil Praktikum
+Hasil yang Dicapai:
+1. Penyimpanan Permanen: Data buku dan anggota yang diinput melalui form web berhasil tersimpan ke dalam tabel PostgreSQL dan tidak hilang saat browser atau server dimatikan.
+![buku postgresql](img/database-create-buku-success.png)
+
+2. Koneksi Web Server: Aplikasi dapat diakses dengan stabil melalui server Apache Laragon pada port kustom (:8080).
+![php -S localhost:8080](img/posrt%208080.png)
+
+3. Penyampaian Notifikasi (Flash Message): Sistem berhasil memberikan feedback notifikasi interaktif setelah operasi INSERT berhasil.
+![notifikasi interaktif create buku](img/flas-berhasil-create-buku.png)
+
+## 5. Kesimpulan
+Praktikum Jobsheet 8 berhasil mentransisikan sistem penyimpanan data pada aplikasi SIMPUS-Mini dari berbasis sesi sementara ($_SESSION) menjadi berbasis database relasional (PostgreSQL). Penggunaan PDO dan Prepared Statements memastikan bahwa aplikasi tidak hanya dapat menyimpan data secara permanen, tetapi juga memiliki fondasi keamanan yang kuat terhadap potensi serangan SQL Injection.
