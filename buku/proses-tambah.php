@@ -56,7 +56,7 @@ $stmt->execute([
 // Set pesan sukses & Redirect ke list.php
 $_SESSION['flash'] = [
     'type' => 'success',
-    'pesan' => 'Buku berhasil ditambahkan.'
+    'message' => 'Buku berhasil ditambahkan.'
 ];
 
 header('Location: list.php');

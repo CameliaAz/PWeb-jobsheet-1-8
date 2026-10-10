@@ -10,20 +10,6 @@ function initNavToggle() {
 }
 
 
-// ===== Konfirmasi hapus (front-end only, belum ke server) =====
-// function initHapusConfirm() {
-//     document.querySelectorAll(".btn-hapus").forEach(function (btn) {
-//         btn.addEventListener("click", function () {
-//             const row = btn.closest("tr");
-//             const nama = row ? row.querySelector("td")?.textContent : "data ini";
-//             const yakin = confirm("Yakin ingin menghapus \"" + nama + "\"?");
-//             if (yakin && row) {
-//                 row.remove();
-//             }
-//         });
-//     });
-// }
-
 // Tombol Hapus kini berada di dalam <form class="form-hapus" method="post">
 // yang benar-benar mengirim request DELETE ke server (buku/hapus.php,
 // anggota/hapus.php). Konfirmasi dilakukan pada event "submit" agar bisa

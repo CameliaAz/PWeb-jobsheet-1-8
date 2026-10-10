@@ -9,7 +9,7 @@ unset($_SESSION['flash']);
             <!-- Menampilkan Flash Message jika ada error dari proses_tambah.php -->
     <?php if (isset($_SESSION['flash'])): ?>
         <div class="flash flash-<?php echo $_SESSION['flash']['type']; ?>">
-            <?php echo $_SESSION['flash']['pesan']; ?>
+            <?php echo $_SESSION['flash']['message']; ?>
         </div>
         <?php unset($_SESSION['flash']); ?>
     <?php endif; ?>
